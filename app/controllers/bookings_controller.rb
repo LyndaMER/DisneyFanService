@@ -1,9 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_character, only: %i[new create]
-
-  def new
-    @booking = Booking.new
-  end
+  before_action :set_character, only: %i[create]
 
   def create
     @booking = @character.bookings.new(booking_params)
@@ -11,7 +7,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to character_bookings_path(@character), notice: 'Booking created successfully.'
     else
-      render :new
+      render "characters/show", status: :unprocessable_entity
     end
   end
 
