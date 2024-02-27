@@ -1,0 +1,18 @@
+<h1>COUCOU</h1>
+
+  <h1 class=>Disney characters</h1>
+
+    <div class="container">
+      <ul>
+      <% @characters.each do |character| %>
+        <li>
+          <div class="card" style="width: 200px">
+            <%# cl_image_tag character.photo %>
+            <h2><%= character.name%></h2>
+            <p><%= character.univers %></p>
+            <h2><%= link_to "Show character", character_path(character) %></h2>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+    </div>
