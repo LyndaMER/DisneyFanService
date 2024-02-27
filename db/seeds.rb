@@ -38,6 +38,6 @@ persos.each do |perso|
     univers: perso[:univers],
     description: perso[:description]
   )
-  character.photo.attach(io: photo, filename: "#{name}.png", content_type: "image/png")
+  character.photo.attach(io: photo, filename: "#{perso[:name]}.png", content_type: "image/png")
   character.save
 end
