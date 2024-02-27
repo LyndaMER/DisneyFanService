@@ -5,3 +5,11 @@
   <h3><%= @character.name %></h2>
   <p><%= @character.description %></p>
 </div>
+
+<%= simple_form_for [@character, @booking],
+data: { controller: "booking" } do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+
+  <%= f.button :submit, 'Create Booking', data: { action: "click->booking#submit" } %>
+<% end %>
