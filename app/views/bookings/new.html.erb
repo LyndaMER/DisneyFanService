@@ -1,8 +1,8 @@
 <h1>bienvenue</h1>
 
-<%= simple_form_for[@character, @booking] do |f| %>
+<%= simple_form_for[@character, @booking], data: {controller: "booking"} do |f| %>
   <%= f.date :start_date, as: :date %>
   <%= f.date :end_date, as: :date %>
 
-  <%= f.button :submit, 'Create Booking' %>
+  <%= f.button :submit, 'Create Booking', data: {action: "click->booking#submit"} %>
 <% end %>
