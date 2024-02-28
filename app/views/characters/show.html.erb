@@ -1,31 +1,21 @@
-<h1 class="d-flex justify-content-center" class="headers-font">Votre héro Disney</h1>
-<div class="container" class="d-flex flex-row justify-content-center rounded " style="height: 600px;">
-  <div class="row">
-      <div class="d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
-      <div class="col-6" >
-        <div class="card text-white bg-primary" style="width: 100%">
-          <h2 class><%= @character.name%></h2>
-          <%= cl_image_tag @character.photo.key, class: "card-img-top " %>
+<h1 class="d-flex justify-content-center headers-font p-5">Votre héro</h1>
+
+<div class="container d-flex flex-column align-items-center rounded" style="height: 600px;">
+  <div class="gy-3 gx-5 row d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
+        <div class="col-6">
+          <h2 class="text-white text-center"><%= @character.name %></h2>
+          <div class="rounded border-0">
+            <%= cl_image_tag @character.photo.key, class: "card-img-top rounded-image" %>
+          </div>
         </div>
+        <div class="col-6 text-white">
+          <%= simple_form_for [@character, @booking],data: { controller: "booking" } do |f| %>
+            <%= f.input :start_date, label: "Date de début", as: :string, input_html: { data: { controller: "datepicker"} } %>
+            <%= f.input :end_date, label: "Date de fin", as: :string, input_html: { data: { controller: "datepicker"} } %>
+            <%= f.button :submit, 'Réserver', class: 'btn btn-primary text-white', data: { action: "click->booking#submit" } %>
+          <% end %>
+          <p class="card text-white bg-info p-3"><%= @character.description %></p>
+          <p class="text-right"><%= link_to "Retour à la liste", characters_path %></p>
         </div>
-        <div class="col-4">
-        <%= simple_form_for [@character, @booking],
-        data: { controller: "booking" } do |f| %>
-          <%= f.input :start_date,
-                as: :string,
-                input_html: {
-                  data: { controller: "datepicker"}
-                } %>
-      <%= f.input :end_date,
-                as: :string,
-                input_html: {
-                  data: { controller: "datepicker"}
-                } %>
-          <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
-      <% end %>
-          <p class="card text-white bg-primary"><%= @character.description %></p>
-         <p><%= link_to "Retour à la liste", characters_path %></p>
-      </div>
-      </div>
   </div>
 </div>
