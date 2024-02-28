@@ -1,4 +1,4 @@
-<h1 class="d-flex justify-content-center" class="headers-font">Your Disney character</h1>
+<h1 class="d-flex justify-content-center" class="headers-font">Votre héro Disney</h1>
 <div class="container" class="d-flex flex-row justify-content-center rounded " style="height: 600px;">
   <div class="row">
       <div class="d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
@@ -13,10 +13,10 @@
         data: { controller: "booking" } do |f| %>
           <%= f.input :start_date %>
           <%= f.input :end_date %>
-          <%= f.button :submit, 'Create Booking', data: { action: "click->booking#submit" } %>
+          <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
       <% end %>
           <p class="card text-white bg-primary"><%= @character.description %></p>
-         <p><%= link_to "Back to characters", characters_path %></p>
+         <p><%= link_to "Retour à la liste", characters_path %></p>
       </div>
       </div>
   </div>
