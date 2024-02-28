@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @booking.character = @character
     @booking.user = current_user
     if @booking.save
-      redirect_to character_bookings_path(@character), notice: 'Booking created successfully.'
+      redirect_to character_bookings_path(@character), notice: 'Votre réservation a bien été prise en compte !'
     else
       render "characters/show", status: :unprocessable_entity
     end

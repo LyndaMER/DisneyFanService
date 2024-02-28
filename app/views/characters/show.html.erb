@@ -11,12 +11,12 @@
         <div class="col-4">
         <%= simple_form_for [@character, @booking],
         data: { controller: "booking" } do |f| %>
-          <%= f.input :date_de_début,
+          <%= f.input :start_date,
                 as: :string,
                 input_html: {
                   data: { controller: "datepicker"}
                 } %>
-      <%= f.input :date_de_fin,
+      <%= f.input :end_date,
                 as: :string,
                 input_html: {
                   data: { controller: "datepicker"}
