@@ -1,20 +1,23 @@
-<h1 class="d-flex justify-content-center">Your Disney character</h1>
-<div class="container" class="d-flex flex-row justify-content-center">
+<h1 class="d-flex justify-content-center" class="headers-font">Votre héro Disney</h1>
+<div class="container" class="d-flex flex-row justify-content-center rounded " style="height: 600px;">
   <div class="row">
-    <div class="col-6">
-      <div class="card" >
-        <h2 class><%= @character.name%></h2>
-        <%= cl_image_tag @character.photo.key, class: "card-img-top" %>
+      <div class="d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
+      <div class="col-6" >
+        <div class="card text-white bg-primary" style="width: 100%">
+          <h2 class><%= @character.name%></h2>
+          <%= cl_image_tag @character.photo.key, class: "card-img-top " %>
+        </div>
+        </div>
+        <div class="col-4">
+        <%= simple_form_for [@character, @booking],
+        data: { controller: "booking" } do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
+      <% end %>
+          <p class="card text-white bg-primary"><%= @character.description %></p>
+         <p><%= link_to "Retour à la liste", characters_path %></p>
       </div>
       </div>
-      <div class="col-4">
-      <%= simple_form_for [@character, @booking],
-      data: { controller: "booking" } do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.button :submit, 'Create Booking', data: { action: "click->booking#submit" } %>
-    <% end %>
-        <p><%= @character.description %></p>
-    </div>
   </div>
 </div>
