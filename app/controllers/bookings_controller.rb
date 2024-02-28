@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :set_character, only: %i[create]
+  before_action :set_character, only: %i[create index]
 
   def create
-    @booking = @character.bookings.new(booking_params)
-
+    @booking = Booking.new(booking_params)
+    @booking.character = @character
+    @booking.user = current_user
     if @booking.save
       redirect_to character_bookings_path(@character), notice: 'Booking created successfully.'
     else

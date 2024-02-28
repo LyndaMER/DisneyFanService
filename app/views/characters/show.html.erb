@@ -11,8 +11,16 @@
         <div class="col-4">
         <%= simple_form_for [@character, @booking],
         data: { controller: "booking" } do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :date_de_début,
+                as: :string,
+                input_html: {
+                  data: { controller: "datepicker"}
+                } %>
+      <%= f.input :date_de_fin,
+                as: :string,
+                input_html: {
+                  data: { controller: "datepicker"}
+                } %>
           <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
       <% end %>
           <p class="card text-white bg-primary"><%= @character.description %></p>
