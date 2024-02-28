@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <a class="navbar-brand-logo" href="#">
       <img src="https://i.pinimg.com/originals/5f/8a/85/5f8a85054562d812b4f3ed841d720550.png" />
-</a>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,17 +11,21 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Page d'accueil</a>
-          </li>
-          <li class="nav-item dropdown">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Page d'accueil</a>
+        </li>
+        <li class="nav-item dropdown">
+          <% if user_signed_in? %>
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.muralsticker.com/42049-thickbox/vinyle-decoratif-pour-enfants-stitch.jpg" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Mon compte</a>
               <a class="dropdown-item" href="#">Mes réservations</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Se déconnecter</a>
+              <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: 'dropdown-item', 'data-turbo-method' => 'delete' %>
             </div>
-          </li>
+          <% else %>
+            <%= link_to 'Connexion', new_user_session_path, class: 'nav-link' %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

@@ -4,16 +4,28 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.character = @character
-    @booking.user = current_user
-    if @booking.save
-      redirect_to character_bookings_path(@character), notice: 'Votre réservation a bien été prise en compte !'
+
+    if user_signed_in?
+      @booking.user = current_user
+
+      if @booking.save
+        redirect_to character_bookings_path(@character), notice: 'Votre réservation a bien été prise en compte !'
+      else
+        render "characters/show", status: :unprocessable_entity
+      end
     else
-      render "characters/show", status: :unprocessable_entity
+      flash[:alert] = "Vous devez être connecté pour réserver un personnage"
+      redirect_to new_user_session_path
     end
   end
 
   def index
     @bookings = @character.bookings
+  end
+
+  def destroy
+    sign_out current_user
+    redirect_to root_path, notice: "Vous avez été déconnecté avec succès."
   end
 
   private
