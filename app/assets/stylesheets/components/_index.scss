@@ -3,3 +3,11 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "researchform";
+@import "button";
+
+.custom-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
