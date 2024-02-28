@@ -1,14 +1,16 @@
-<h1>COUCOU</h1>
+<h1 class= text-center>Choose your Disney Hero</h1>
 
-  <h1 class=>Disney characters</h1>
-
-    <div class="container" class="col-4">
-      <% @characters.each do |character| %>
-          <div class="card" style="width: 200px" >
-            <%= cl_image_tag character.photo.key, class: "card-img-top" %>
-            <h2><%= character.name%></h2>
-            <p><%= character.univers %></p>
-            <h2><%= link_to "Show character", character_path(character) %></h2>
-          </div>
-      <% end %>
+    <div class="container gap-2">
+      <div class="row">
+        <% @characters.each do |character| %>
+            <div class="col-4">
+              <div class="card" style="width: 250px">
+                <%= cl_image_tag character.photo.key, class: "card-img-top img-thumbnail" %>
+                <h2><%= character.name%></h2>
+                <p><%= character.univers %></p>
+                <%= link_to "Show character", character_path(character) %>
+              </div>
+            </div>
+        <% end %>
+      </div>
     </div>

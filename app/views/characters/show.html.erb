@@ -1,25 +1,28 @@
-<h1>Your Disney character</h1>
-
-<div>
-  <h2><%= @character.univers %></h2>
-  <h3><%= @character.name %></h2>
-  <p><%= @character.description %></p>
+<h1 class="d-flex justify-content-center">Your Disney character</h1>
+<div class="container" class="d-flex flex-row justify-content-center">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" >
+        <h2 class><%= @character.name%></h2>
+        <%= cl_image_tag @character.photo.key, class: "card-img-top" %>
+      </div>
+      </div>
+      <div class="col-4">
+      <%= simple_form_for [@character, @booking],
+      data: { controller: "booking" } do |f| %>
+      <%= f.input :start_date,
+                as: :string,
+                input_html: {
+                  data: { controller: "datepicker"}
+                } %>
+      <%= f.input :end_date,
+                as: :string,
+                input_html: {
+                  data: { controller: "datepicker"}
+                } %>
+        <%= f.button :submit, 'Create Booking', data: { action: "click->booking#submit" } %>
+    <% end %>
+        <p><%= @character.description %></p>
+    </div>
+  </div>
 </div>
-
-<%= simple_form_for [@character, @booking],
-  data: { controller: "booking" } do |f| %>
-  <%= f.input :start_date,
-            as: :string,
-            input_html: {
-              data: { controller: "datepicker"}
-            } %>
-  <%= f.input :end_date,
-            as: :string,
-            input_html: {
-              data: { controller: "datepicker"}
-            } %>
-
-
-
-  <%= f.button :submit, 'Create Booking', data: { action: "click->booking#submit" } %>
-<% end %>
