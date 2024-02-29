@@ -1,0 +1,11 @@
+.custom-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.rounded-image {
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 500px;
+}

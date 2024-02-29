@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :characters, only: %i[index show] do
     resources :bookings, only: %i[create index]
   end
+  resources :bookings, only: :destroy
 end
