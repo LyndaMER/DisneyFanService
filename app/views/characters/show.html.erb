@@ -1,8 +1,8 @@
 <%= render 'composants/navbar' %>
 
-<h1 class="d-flex justify-content-center headers-font p-5"><%= @character.name %></h1>
+<h1 class="d-flex justify-content-center headers-font p-2"><%= @character.name %></h1>
 
-<div class="container d-flex flex-column align-items-center rounded" style="height: 600px;">
+<div class="container d-flex flex-column align-items-center rounded pt-4" style="height: 600px;">
   <div class="gy-3 gx-5 row d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
     <div class="col-6">
       <p class="text-left"><%= link_to "< Retour à la liste", characters_path, style: "color: white; text-decoration: none; font-weight: bold;" %></p>
@@ -18,9 +18,18 @@
       <div class="form-group">
         <%= f.input :end_date, label: "Date de fin", as: :string, input_html: { class: "form-control", data: { controller: "datepicker"} } %>
       </div>
-        <%= f.button :submit, 'Réserver', class: 'btn btn-primary text-white', data: { action: "click->booking#submit" } %>
+        <%= f.button :submit, 'Réserver', class: 'btn btn-reserver', data: { action: "click->booking#submit" } %>
       <% end %>
-      <p class="card text-white bg-info p-3"><%= @character.description %></p>
+      <p class="card text-white bg-info pt-3"><%= @character.description %></p>
+      <p><lord-icon
+        src="https://cdn.lordicon.com/jxjfjyri.json"
+        trigger="hover"
+        colors="primary:#4be1ec,secondary:#2516c7"
+        style="width:25px;height:25px">
+      </lord-icon><%= @character.note %></p>
+      <p><%= @character.name %> vous émerveillera de ses talents magiques en <span style="text-decoration: underline;"><%= @character.competence %></span>.</p>
+      <p><script src="https://cdn.lordicon.com/lordicon.js"></script>
+      <p>(Prix sur devis)</p>
     </div>
   </div>
 </div>
