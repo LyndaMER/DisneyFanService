@@ -32,8 +32,8 @@
   gap: 21px;
   img{
     border-radius: 8px;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
   }
 }
 .content {
@@ -58,4 +58,25 @@
   margin-bottom: 35px;
   margin-left: 35px;
   text-decoration: none;
+}
+
+.flash {
+  background-color: #000033;
+  font-size: 18px;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+
+}
+
+.fas {
+  color: white;
+  margin-left: 50px;
+}
+
+
+.red-flash {
+  background-color: rgb(91, 9, 9);
 }

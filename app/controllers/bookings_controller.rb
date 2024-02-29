@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
       @booking.user = current_user
 
       if @booking.save
-        redirect_to character_bookings_path(@character), notice: 'Votre réservation a bien été prise en compte !'
+        redirect_to character_bookings_path(@character)
+        flash[:booking_added] = "Votre réservation a bien été prise en compte."
       else
         render "characters/show", status: :unprocessable_entity
       end
@@ -27,7 +28,8 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_back fallback_location: root_path, notice: 'La réservation est supprimé avec succès.'
+    redirect_back fallback_location: root_path
+    flash[:booking_deleted] = "Votre réservation a été supprimée avec succès."
   end
 
   private
