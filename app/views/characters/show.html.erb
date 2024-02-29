@@ -7,25 +7,25 @@
           <h2 class><%= @character.name%></h2>
           <%= cl_image_tag @character.photo.key, class: "card-img-top " %>
         </div>
+          </div>
+            <div class="col-4">
+            <%= simple_form_for [@character, @booking],
+            data: { controller: "booking" } do |f| %>
+              <%= f.input :start_date,
+                          as: :string,
+                          input_html: {
+                          data: { controller: "datepicker"}
+                          } %>
+              <%= f.input :end_date,
+                          as: :string,
+                          input_html: {
+                          data: { controller: "datepicker"}
+                          } %>
+              <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
+              <% end %>
+            <p class="card text-white bg-primary"><%= @character.description %></p>
+            <p><%= link_to "Retour à la liste", characters_path %></p>
+            </div>
         </div>
-        <div class="col-4">
-        <%= simple_form_for [@character, @booking],
-        data: { controller: "booking" } do |f| %>
-          <%= f.input :start_date,
-                as: :string,
-                input_html: {
-                  data: { controller: "datepicker"}
-                } %>
-      <%= f.input :end_date,
-                as: :string,
-                input_html: {
-                  data: { controller: "datepicker"}
-                } %>
-          <%= f.button :submit, 'Réserver ce héro', data: { action: "click->booking#submit" } %>
-      <% end %>
-          <p class="card text-white bg-primary"><%= @character.description %></p>
-         <p><%= link_to "Retour à la liste", characters_path %></p>
-      </div>
-      </div>
   </div>
 </div>
