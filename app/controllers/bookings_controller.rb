@@ -21,11 +21,13 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = @character.bookings
+    @bookings = current_user.bookings
   end
 
   def destroy
-    sign_out current_user
-    redirect_to root_path, notice: "Vous avez été déconnecté avec succès."
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_back fallback_location: root_path, notice: 'La réservation est supprimé avec succès.'
   end
 
   private
