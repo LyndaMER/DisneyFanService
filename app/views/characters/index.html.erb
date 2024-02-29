@@ -2,18 +2,18 @@
 <%= render 'composants/navbar' %>
 
 
-<div class="container gap-2">
+<div class="container gap-2  ">
 <%= render 'composants/researchform' %>
   <div class="row">
     <% @characters.each do |character| %>
-        <div class="col-4">
-          <div class="card" style="width: auto">
-            <%= cl_image_tag character.photo.key, class: "card-img-center img-thumbnail custom-image " %>
+        <div class="col-4  ">
+          <div class="card-index" style="width: auto">
+            <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
             <figure class="text-center">
-              <blockquote class="blockquote">
+              <blockquote class="blockquote text-white" style="text-decoration:none".>
                 <%= link_to character.name, character_path(character) %>
               </blockquote>
-            <figcaption class="blockquote-footer"><%= character.univers %></figcaption>
+            <figcaption class="blockquote-footer" style="body-font"><%= character.univers %></figcaption>
             </figure>
           </div>
         </div>
