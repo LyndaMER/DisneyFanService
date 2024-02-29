@@ -4,9 +4,11 @@ class Character < ApplicationRecord
   has_one_attached :photo
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_synopsis,
-                  against: %i[name univers description],
+  pg_search_scope :search_by_name_and_univers,
+                  against: %i[name univers],
                   using: {
                     tsearch: { prefix: true }
                   }
+
+
 end

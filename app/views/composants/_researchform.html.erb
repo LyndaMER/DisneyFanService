@@ -1,0 +1,16 @@
+<%# <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get" >
+  <div class="search-form-control form-group custom-search">
+    <input class="form-control string required" type="text" placeholder="Recherche ton héro préféré..." name="search[query]" id="search_query" />
+  </div>
+    <button name="button" type="submit" class="btn btn-flat">
+    <i class="fas fa-search"></i> Rechercher
+    </button>
+</form> %>
+<%= form_with(url: characters_path, method: :get, local: true, class: "simple_form search") do |form| %>
+<div class= "search-form-control form-group custom-search ">
+  <%= form.text_field :query, class: "form-control string required", placeholder: "Recherche ton Univers ou ton personnage préféré..." %>
+    <button name="button" type="submit" class="btn btn-gradient">
+    <i class="fas fa-search"></i> Rechercher
+    </button>
+</div>
+<% end %>
