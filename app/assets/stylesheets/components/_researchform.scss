@@ -12,8 +12,9 @@
 
 .search-form-control .form-control {
   height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   border: 1px solid #E7E7E7;
+  border-radius: 8px;
 }
 
 .search-form-control .form-control:focus {

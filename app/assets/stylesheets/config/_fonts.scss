@@ -18,6 +18,17 @@ $headers-font: "Shantell Sans", cursive;
 
 h1{
   font-family: "Shantell Sans", cursive;
+  -webkit-mask-clip: text;
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  align-self: center;
+  mask-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text !important;
+  background: linear-gradient( #4be1ec, #000033);
+  width: fit-content;
+  margin-bottom: 80px !important;
+  margin-top: 80px !important;
 }
 
 .charac{

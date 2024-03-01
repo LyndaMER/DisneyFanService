@@ -27,3 +27,13 @@ width: 320px ;
   width: fit-content !important;
 
 }
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form{
+    width: 100%;
+    margin-bottom: 48px;
+  }
+}
