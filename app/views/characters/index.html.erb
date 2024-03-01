@@ -4,27 +4,27 @@
 
 <div class="container gap-2  ">
 <%= render 'composants/researchform' %>
-  <div class="row">
-    <% @characters.each do |character| %>
-        <div class="col-4  ">
-        <%= link_to character_path(character) do %>
-          <div class="card-index" style="width: auto">
-            <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
-            <figure class="text-center">
-              <blockquote class="blockquote">
-                <%= link_to character.name, character_path(character), class: "no-underline" %>
-              </blockquote>
-            <figcaption class="blockquote-footer no-underline" style="body-font"><%= character.univers%></figcaption>
-            <div>
-              <p class= "no-underline">
-                Note: <%=character.note %></p>
+    <div class="cards">
+      <% @characters.each do |character| %>
+        <%# <div class="col-4"> %>
+          <%= link_to character_path(character) do %>
+            <div class="card-index">
+              <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
+              <figure class="text-center">
+                <blockquote class="blockquote">
+                  <%= link_to character.name, character_path(character), class: "no-underline" %>
+                </blockquote>
+              <figcaption class="blockquote-footer no-underline" style="body-font"><%= character.univers%></figcaption>
+              <div>
+                <p class= "no-underline">
+                  Note: <%=character.note %></p>
+              </div>
+              </figure>
+              <% end %>
             </div>
-            </figure>
-            <% end %>
-          </div>
-        </div>
+        <%# </div> %>
       <% end %>
-  </div>
+    </div>
 </div>
 
 <%= render 'composants/footer' %>

@@ -18,3 +18,14 @@
 .navbar-lewagon .nav-link {
   color: black;
 }
+
+.empty-left{
+  margin-right: auto;
+  width: 200px;
+}
+.empty-right{
+  margin-left: auto;
+  width: 200px;
+  display: flex;
+  justify-content: end;
+}

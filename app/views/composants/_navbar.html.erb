@@ -1,19 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-4">
   <div class="container-fluid">
-    <a class="navbar-brand-logo" href="#">
+    <a class="navbar-brand-logo empty-left" href="">
       <img src="https://i.pinimg.com/originals/5f/8a/85/5f8a85054562d812b4f3ed841d720550.png" />
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+
+    <%# brand %>
     <div class="navbar-brand mx-auto">
       <img class="img-fluid" src="https://scontent.flyn1-1.fna.fbcdn.net/v/t39.30808-6/429876519_24822239770756780_447185945924038670_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3635dc&_nc_ohc=mNF50KngcpIAX_SKdiy&_nc_ht=scontent.flyn1-1.fna&oh=00_AfB2NqCLnfDdL6YXSOMBymV0s7D2lG-9iTB0JYUfaSpBIw&oe=65E4B7AF" alt="Disney Fan Services">
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Page d'accueil</a>
-        </li>
+    <%# brand %>
+
+    <%# côté droit %>
+    <button class="navbar-toggler empty-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse empty-right" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <% if user_signed_in? %>
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://www.muralsticker.com/42049-thickbox/vinyle-decoratif-pour-enfants-stitch.jpg" />
