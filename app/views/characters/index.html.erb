@@ -14,6 +14,16 @@
                 <%= link_to character.name, character_path(character) %>
               </blockquote>
             <figcaption class="blockquote-footer" style="body-font"><%= character.univers %></figcaption>
+            <p><%= character.competence%></p>
+            <p>
+              <lord-icon
+                src="https://cdn.lordicon.com/jxjfjyri.json"
+                trigger="hover"
+                colors="primary:#4be1ec,secondary:#2516c7"
+                style="width:25px;height:25px">
+                </lord-icon>
+                <br>
+                <%= character.note %></p>
             </figure>
           </div>
         </div>
