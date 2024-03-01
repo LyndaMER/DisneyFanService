@@ -9,7 +9,6 @@
         <div class="col-4  ">
         <%= link_to character_path(character) do %>
           <div class="card-index" style="width: auto">
-            <%= link_to character_path(character) do %>
             <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
             <figure class="text-center">
               <blockquote class="blockquote">
@@ -29,4 +28,3 @@
 </div>
 
 <%= render 'composants/footer' %>
-
