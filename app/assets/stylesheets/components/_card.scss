@@ -7,7 +7,10 @@ box-shadow: 0 4px 10px 0 #000033;
 text-decoration: #000033;
 width: 320px ;
 }
-
+.card-index:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
 
 .cards {
   display: flex;
@@ -22,4 +25,5 @@ width: 320px ;
   box-shadow: 0 4px 10px 0 #000033;
   text-decoration: #000033;
   width: fit-content !important;
+
 }
