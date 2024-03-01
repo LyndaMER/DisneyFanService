@@ -1,6 +1,42 @@
-
-<div>
-  <p>Booking ID: <%= booking.id %></p>
-  <p>Start Date: <%= booking.start_date %></p>
-  <p>End Date: <%= booking.end_date %></p>
+<div class = "user">
+<h3>Les reservations de : <%= current_user.email %></h3>
 </div>
+
+
+<%= link_to "Retour à la list", characters_path, class:"link"%>
+
+
+
+<div class="booking-container">
+  <% @bookings.each do |booking| %>
+    <div class="booking">
+      <%= image_tag booking.character.photo, class: 'character-image' %>
+      <div class="content">
+        <h3> Le personnage reservé est : <%= booking.character.name %></h3>
+        <p class="character-name">Le numéro de la reservation: <%= booking.id %></p>
+        <p>Début de la reservation: <%= booking.start_date %></p>
+        <p>Fin de la reservation: <%= booking.end_date %></p>
+      </div>
+      <%= link_to booking_path(booking), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: "Delete" do %>
+      <i class="fa-solid fa-trash-can"></i>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
+
+<% if flash[:booking_added].present? %>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>Yay!</strong> <%= flash[:booking_added] %></span>
+    <%= link_to '#', class: 'close', data: { bs_dismiss: 'alert', aria_label: 'Close' } do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+  </div>
+<% elsif flash[:booking_deleted].present? %>
+  <div class="flash flash-success alert alert-dismissible fade show red-flash" role="alert">
+    <span><strong>Yay!</strong> <%= flash[:booking_deleted] %></span>
+    <%= link_to '#', class: 'close', data: { bs_dismiss: 'alert', aria_label: 'Close' } do %>
+      <i class="delete fas fa-times"></i>
+    <% end %>
+  </div>
+<% end %>
