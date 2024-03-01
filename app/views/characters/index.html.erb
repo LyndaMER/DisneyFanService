@@ -9,6 +9,7 @@
         <div class="col-4  ">
         <%= link_to character_path(character) do %>
           <div class="card-index" style="width: auto">
+            <%= link_to character_path(character) do %>
             <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
             <figure class="text-center">
               <blockquote class="blockquote">
@@ -20,7 +21,7 @@
                 Note: <%=character.note %></p>
             </div>
             </figure>
-            <%end%>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -29,8 +30,3 @@
 
 <%= render 'composants/footer' %>
 
-  <%# # univers Selecteur de recherche %>
-  <%# form_tag(characters_path, method: :get, remote: true) do %>
-  <%# select_tag 'query', options_for_select(["Marvel", "Star Wars", "Princesses Disney"]), prompt: 'Sélectionner une catégorie', id: 'query' %>
-  <%# submit_tag 'Rechercher' %>
-  <%# end %>
