@@ -7,6 +7,7 @@
   <div class="row">
     <% @characters.each do |character| %>
         <div class="col-4  ">
+        <%= link_to character_path(character) do %>
           <div class="card-index" style="width: auto">
             <%= cl_image_tag character.photo.key, class: "rounded mx-auto d-block img-thumbnail custom-image " %>
             <figure class="text-center">
@@ -19,6 +20,7 @@
                 Note: <%=character.note %></p>
             </div>
             </figure>
+            <% end %>
           </div>
         </div>
       <% end %>
