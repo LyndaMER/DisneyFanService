@@ -5,7 +5,7 @@
 <div class="container d-flex flex-column align-items-center rounded pt-4" style="height: 600px;">
   <div class="gy-3 gx-5 row d-flex flex-row justify-content-between rounded card bg-info" style="height: 700px;">
     <div class="col-6">
-      <p class="text-left"><%= link_to "< Retour à la liste", characters_path, style: "color: white; text-decoration: none; font-weight: bold;" %></p>
+      <p class="text-left"><%= link_to "< Retour au menu", characters_path, style: "color: white; text-decoration: none; font-weight: bold;" %></p>
       <div class="rounded border-0">
         <%= cl_image_tag @character.photo.key, class: "card-img-top rounded-image" %>
       </div>

@@ -14,6 +14,10 @@
                 <%= link_to character.name, character_path(character), class: "no-underline" %>
               </blockquote>
             <figcaption class="blockquote-footer no-underline" style="body-font"><%= character.univers%></figcaption>
+            <div>
+              <p class= "no-underline">
+                Note: <%=character.note %></p>
+            </div>
             </figure>
           </div>
         </div>
