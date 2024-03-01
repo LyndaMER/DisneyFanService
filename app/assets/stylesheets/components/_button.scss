@@ -70,3 +70,36 @@ background: linear-gradient(145deg, #2516c7 0%, #4be1ec 100%);
 color: #EDEDED;
 border: solid 2px #EDEDED;
 }
+
+btn-rechercher{
+  font-family: Bebas Neue;
+font-weight: 100;
+font-size: 18px;
+color: #EDEDED;
+background: linear-gradient(145deg, #000033 0%, #4be1ec 100%);
+padding: 10px 29px;
+border: solid #ffffff 2px;
+border-radius: 50px;
+transition : 2685ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+text-transform: lowercase;
+}
+
+.btn-rechercher:hover{
+
+  transition : 2685ms;
+  padding: 10px 61px;
+  transform : translateY(-0px);
+  background: linear-gradient(145deg, #000033 0%, #4be1ec 100%);
+  color: #EDEDED;
+  border: solid 2px #EDEDED;
+  }
+
+  // .bi-star{
+  //   color: orange;
+  //   font-size: 1.5rem;
+  // }

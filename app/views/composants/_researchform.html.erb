@@ -7,9 +7,9 @@
     </button>
 </form> %>
 <%= form_with(url: characters_path, method: :get, local: true, class: "simple_form search") do |form| %>
-<div class= "search-form-control form-group custom-search ">
+<div class= "search-form-control form-group custom-search">
   <%= form.text_field :query, class: "form-control string required", placeholder: "Recherche ton Univers ou ton personnage préféré..." %>
-    <button name="button" type="submit" class="btn btn-gradient">
+    <button name="button" type="submit" class="btn btn-rechercher">
     <i class="fas fa-search"></i> Rechercher
     </button>
 </div>

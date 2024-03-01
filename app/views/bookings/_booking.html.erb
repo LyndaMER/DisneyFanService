@@ -1,9 +1,9 @@
 <div class = "user">
-<h3>Les reservations de : <%= current_user.email %></h3>
+<h3> <%= current_user.email %> , voici vos réservations</h3>
 </div>
 
 
-<%= link_to "Retour à la list", characters_path, class:"link"%>
+<%= link_to "Retour au menu", characters_path, class:"link"%>
 
 
 
@@ -13,9 +13,9 @@
       <%= image_tag booking.character.photo, class: 'character-image' %>
       <div class="content">
         <h3> Le personnage reservé est : <%= booking.character.name %></h3>
-        <p class="character-name">Le numéro de la reservation: <%= booking.id %></p>
-        <p>Début de la reservation: <%= booking.start_date %></p>
-        <p>Fin de la reservation: <%= booking.end_date %></p>
+        <p class="character-name">Le numéro de la réservation: <%= booking.id %></p>
+        <p>Début de la réservation: <%= booking.start_date %></p>
+        <p>Fin de la réservation: <%= booking.end_date %></p>
       </div>
       <%= link_to booking_path(booking), data: { turbo_method: :delete, confirm: 'Are you sure?' }, class: "Delete" do %>
       <i class="fa-solid fa-trash-can"></i>
